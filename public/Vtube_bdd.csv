@@ -1,0 +1,15 @@
+Id,first_name,last_name,colour,gender,status,speciality,nb_followers,debut_date,height,seiso_meter,is_selected
+1,Gawr,Gura,blue,F,graduate,"chant,gaming",4740000,2019-09-13,148,7,false
+2,Houshou,Marine,red,F,active,"chant,variety",4140000,2019-08-11,160,3,false
+3,Usada,Pekora,blue,F,active,"gaming,streaming",2720000,2019-07-17,154,6,false
+4,Hoshimachi,Suisei,blue,F,active,"chant,gaming,drawing",2790000,2018-12-01,157,8,false
+5,Shirakami,Fubuki,white,F,active,"variety,gaming",2610000,2018-06-01,153,9,false
+6,Minato,Aqua,blue,F,affiliate,"gaming,variety",2250000,2018-07-11,152,10,false
+7,Inugami,Korone,yellow,F,active,"streaming,gaming",2230000,2019-04-30,152,9,false
+8,Oozora,Subaru,yellow,F,active,"gaming,comedy",1250000,2018-09-07,160,7,false
+9,Aragami,Ouga,green,M,active,"gaming,voice acting",280000,2020-03-05,178,6,false
+10,Kaela,Kovalskia,red,F,active,"chant,gaming",600000,2021-10-15,167,7,false
+11,Rikka,,pink,M,active,"gaming,art",400000,2019-10-20,179,8,false
+12,Kageyama,Shien,black,M,active,"gaming,streaming",510000,2020-12-01,177,5,false
+13,Yatogami,Fuma,yellow,M,active,"gaming,voice acting",350000,2021-03-10,175,6,false
+14,Tokino,Sora,blue,F,active,"chant,variety",1310000,2017-09-07,153,9,false
