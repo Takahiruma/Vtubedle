@@ -10,7 +10,54 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
-import { TextField, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Paper, Typography } from "@mui/material";
+import { TextField, TableContainer, Table, TableHead, TableRow, TableBody, Paper, Typography } from "@mui/material";
+
+import { motion, type Variants } from "framer-motion";
+import TableCell from '@mui/material/TableCell';
+
+const MotionTableCell = motion(TableCell);
+
+const cellVariants: Variants = {
+  hidden: { rotateY: 90, opacity: 0 },
+  visible: (i: number) => ({
+    rotateY: 0,
+    opacity: 1,
+    transition: {
+      delay: i * 0.35,
+      type: "spring",
+      stiffness: 300,
+      damping: 20,
+    },
+  }),
+};
+
+const cellColor = (a: any, b: any, isArray = false) => {
+  if (isArray) {
+    const common = a.some((x: string) => b.includes(x));
+    if (common) {
+      if (a.length === b.length && a.every((x: string) => b.includes(x))) return "green";
+      else return "orange";
+    }
+    return "red";
+  }
+  return a === b ? "green" : "red";
+};
+
+const formatFollowers = (num: number): string => {
+  if (num >= 1000000) return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
+  if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, "") + "k";
+  return num.toString();
+};
+
+const formatDate = (dateStr: string): string => {
+  if (!dateStr) return "";
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return dateStr;
+  const day = String(d.getDate()).padStart(2, "0");
+  const month = String(d.getMonth() + 1).padStart(2, "0");
+  const year = d.getFullYear();
+  return `${day}/${month}/${year}`;
+};
 
 const VtuberLoader: React.FC = () => {
   const [vtubers, setVtubers] = useState<Vtuber[]>([]);
@@ -55,8 +102,8 @@ const VtuberLoader: React.FC = () => {
       const data: Vtuber[] = parsed.data.map((row: any, index: number) => {
         const firstName = capitalizeFirstLetter(row.first_name.toLowerCase() ?? "");
         const lastName = capitalizeFirstLetter(row.last_name.toLowerCase() ?? "");
-        const portraitName = 
-          firstName && lastName 
+        const portraitName =
+          firstName && lastName
             ? `${firstName}_${lastName}_Portrait.webp`
             : `${firstName || lastName}_Portrait.webp`;
         return {
@@ -105,6 +152,30 @@ const VtuberLoader: React.FC = () => {
     addToComparison(vtuber);
     setSearchTerm("");
   };
+
+  const renderValueWithHint = (displayValue: string | number, compareValue?: number, numericValue?: number) => {
+  if (compareValue === undefined || numericValue === undefined || numericValue === compareValue) {
+    return <div style={{ textAlign: "center" }}>{displayValue}</div>;
+  }
+  return (
+    <div style={{ position: "relative", width: "100%", textAlign: "center" }}>
+      {displayValue}
+      <img
+        src={numericValue < compareValue ? "/assets/hints/up.png" : "/assets/hints/down.png"}
+        alt={numericValue < compareValue ? "up" : "down"}
+        style={{
+          width: 16,
+          height: 16,
+          position: "absolute",
+          top: "50%",
+          transform: "translateY(-50%)",
+          pointerEvents: "none",
+        }}
+      />
+    </div>
+  );
+};
+
 
   return (
     <div style={{ position: "relative" }}>
@@ -155,42 +226,120 @@ const VtuberLoader: React.FC = () => {
         <p></p>
       )}
 
-      {currentlySelected ? (
-        <div>
-          {hasWon && (
-            <Typography variant="h6" color="success.main">Victoire</Typography>
-          )}
-        </div>
-      ) : (
-        <p></p>
+      {currentlySelected && hasWon && (
+        <Typography variant="h6" color="success.main">Victoire</Typography>
       )}
 
       <h3>Comparaison des VTubers sélectionnés</h3>
       <TableContainer component={Paper} sx={{ maxHeight: 400, overflowY: "auto" }}>
-        <Table stickyHeader size="small" aria-label="table comparaison VTubers">
+        <Table
+          stickyHeader
+          size="small"
+          aria-label="table comparaison VTubers"
+          sx={{ borderCollapse: "collapse" }}
+        >
           <TableHead>
-            <TableRow>
-              <TableCell>Portrait</TableCell>
-              <TableCell>Couleur</TableCell>
-              <TableCell>Followers</TableCell>
-              <TableCell>Début</TableCell>
-              <TableCell>Taille (cm)</TableCell>
-              <TableCell>Genre</TableCell>
-              <TableCell>Statut</TableCell>
+            <TableRow sx={{ backgroundColor: "#f0f0f0" }}>
+              <TableCell sx={{ border: "1px solid #ccc" }}>Portrait</TableCell>
+              <TableCell sx={{ border: "1px solid #ccc" }}>Couleur</TableCell>
+              <TableCell sx={{ border: "1px solid #ccc" }}>Followers</TableCell>
+              <TableCell sx={{ border: "1px solid #ccc" }}>Début</TableCell>
+              <TableCell sx={{ border: "1px solid #ccc" }}>Taille (cm)</TableCell>
+              <TableCell sx={{ border: "1px solid #ccc" }}>Genre</TableCell>
+              <TableCell sx={{ border: "1px solid #ccc" }}>Spécialités</TableCell>
+              <TableCell sx={{ border: "1px solid #ccc" }}>Statut</TableCell>
             </TableRow>
           </TableHead>
+
           <TableBody>
-            {comparisonList.map(vt => (
-              <TableRow key={vt.id} hover>
-                <TableCell><Avatar alt={`${vt.first_name} ${vt.last_name}`} src={vt.portrait} /></TableCell>
-                <TableCell>{vt.colour}</TableCell>
-                <TableCell>{vt.nb_followers.toLocaleString()}</TableCell>
-                <TableCell>{vt.debut_date}</TableCell>
-                <TableCell>{vt.height}</TableCell>
-                <TableCell>{vt.gender}</TableCell>
-                <TableCell>{vt.status}</TableCell>
-              </TableRow>
-            ))}
+            {comparisonList.map((vt) => {
+              const colourBg = cellColor(vt.colour, randomSelected?.colour);
+              const followersBg = cellColor(vt.nb_followers, randomSelected?.nb_followers);
+              const debutBg = cellColor(vt.debut_date, randomSelected?.debut_date);
+              const heightBg = cellColor(vt.height, randomSelected?.height);
+              const genderBg = cellColor(vt.gender, randomSelected?.gender);
+              const statusBg = cellColor(vt.status, randomSelected?.status);
+              const specBg = cellColor(vt.speciality, randomSelected?.speciality, true);
+
+              return (
+                <TableRow key={vt.id} hover>
+                  <TableCell sx={{ border: "1px solid #ddd" }}>
+                    {/* Portrait n’est pas animé */}
+                    <Avatar alt={`${vt.first_name} ${vt.last_name}`} src={vt.portrait} />
+                  </TableCell>
+
+                  <MotionTableCell
+                    initial="hidden"
+                    animate="visible"
+                    custom={0}
+                    variants={cellVariants}
+                    sx={{ border: "1px solid #ddd", backgroundColor: colourBg }}
+                  >
+                    {vt.colour}
+                  </MotionTableCell>
+
+                  <MotionTableCell
+                    initial="hidden"
+                    animate="visible"
+                    custom={1}
+                    variants={cellVariants}
+                    sx={{ border: "1px solid #ddd", backgroundColor: followersBg }}
+                  >
+                    {renderValueWithHint(formatFollowers(vt.nb_followers), randomSelected?.nb_followers, vt.nb_followers)}
+                  </MotionTableCell>
+
+                  <MotionTableCell
+                    initial="hidden"
+                    animate="visible"
+                    custom={2}
+                    variants={cellVariants}
+                    sx={{ border: "1px solid #ddd", backgroundColor: debutBg }}
+                  >
+                    {formatDate(vt.debut_date)}
+                  </MotionTableCell>
+
+                  <MotionTableCell
+                    initial="hidden"
+                    animate="visible"
+                    custom={3}
+                    variants={cellVariants}
+                    sx={{ border: "1px solid #ddd", backgroundColor: heightBg }}
+                  >
+                    {renderValueWithHint(vt.height, randomSelected?.height, vt.height)}
+                  </MotionTableCell>
+
+                  <MotionTableCell
+                    initial="hidden"
+                    animate="visible"
+                    custom={4}
+                    variants={cellVariants}
+                    sx={{ border: "1px solid #ddd", backgroundColor: genderBg }}
+                  >
+                    {vt.gender}
+                  </MotionTableCell>
+
+                  <MotionTableCell
+                    initial="hidden"
+                    animate="visible"
+                    custom={5}
+                    variants={cellVariants}
+                    sx={{ border: "1px solid #ddd", backgroundColor: specBg }}
+                  >
+                    {vt.speciality.join(", ")}
+                  </MotionTableCell>
+
+                  <MotionTableCell
+                    initial="hidden"
+                    animate="visible"
+                    custom={6}
+                    variants={cellVariants}
+                    sx={{ border: "1px solid #ddd", backgroundColor: statusBg }}
+                  >
+                    {vt.status}
+                  </MotionTableCell>
+                </TableRow>
+              );
+            })}
           </TableBody>
         </Table>
       </TableContainer>
