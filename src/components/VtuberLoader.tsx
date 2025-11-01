@@ -14,6 +14,7 @@ import { TextField, TableContainer, Table, TableHead, TableRow, TableBody, Paper
 
 import { motion, type Variants } from "framer-motion";
 import TableCell from '@mui/material/TableCell';
+import { SeisonessTypes } from "../models/SeisonessTypes";
 
 const MotionTableCell = motion(TableCell);
 
@@ -96,16 +97,18 @@ const VtuberLoader: React.FC = () => {
 
   const fetchVtuberData = async () => {
     try {
-      const response = await fetch("/Vtube_bdd.csv");
-      const csvText = await response.text();
-      const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
-      const data: Vtuber[] = parsed.data.map((row: any, index: number) => {
+        const response = await fetch("/Vtube_bdd.csv");
+        const csvText = await response.text();
+        const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
+        const data: Vtuber[] = parsed.data.map((row: any, index: number) => {
         const firstName = capitalizeFirstLetter(row.first_name.toLowerCase() ?? "");
         const lastName = capitalizeFirstLetter(row.last_name.toLowerCase() ?? "");
         const portraitName =
-          firstName && lastName
+            firstName && lastName
             ? `${firstName}_${lastName}_Portrait.webp`
             : `${firstName || lastName}_Portrait.webp`;
+        
+            
         return {
           id: Number(row.Id ?? index),
           first_name: firstName,
@@ -117,7 +120,7 @@ const VtuberLoader: React.FC = () => {
           nb_followers: Number(row.nb_followers ?? 0),
           debut_date: row.debut_date ?? "",
           height: Number(row.height ?? 0),
-          seiso_meter: Number(row.seiso_meter ?? 0),
+          seisoness: (row.seisoness as SeisonessTypes) ?? SeisonessTypes.YABAI,
           portrait: `/assets/portrait/${portraitName}`,
           is_selected: row.is_selected === "true",
         };
@@ -247,6 +250,7 @@ const VtuberLoader: React.FC = () => {
               <TableCell sx={{ border: "1px solid #ccc" }}>Taille (cm)</TableCell>
               <TableCell sx={{ border: "1px solid #ccc" }}>Genre</TableCell>
               <TableCell sx={{ border: "1px solid #ccc" }}>Spécialités</TableCell>
+              <TableCell sx={{ border: "1px solid #ccc" }}>Seisoness</TableCell>
               <TableCell sx={{ border: "1px solid #ccc" }}>Statut</TableCell>
             </TableRow>
           </TableHead>
@@ -260,6 +264,7 @@ const VtuberLoader: React.FC = () => {
               const genderBg = cellColor(vt.gender, randomSelected?.gender);
               const statusBg = cellColor(vt.status, randomSelected?.status);
               const specBg = cellColor(vt.speciality, randomSelected?.speciality, true);
+              const seisoMeterBg = cellColor(vt.seisoness, randomSelected?.seisoness);
 
               return (
                 <TableRow key={vt.id} hover>
@@ -332,6 +337,16 @@ const VtuberLoader: React.FC = () => {
                     initial="hidden"
                     animate="visible"
                     custom={6}
+                    variants={cellVariants}
+                    sx={{ border: "1px solid #ddd", backgroundColor: seisoMeterBg }}
+                  >
+                    {vt.seisoness.toLocaleLowerCase()}
+                  </MotionTableCell>
+
+                  <MotionTableCell
+                    initial="hidden"
+                    animate="visible"
+                    custom={7}
                     variants={cellVariants}
                     sx={{ border: "1px solid #ddd", backgroundColor: statusBg }}
                   >

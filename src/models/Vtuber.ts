@@ -1,3 +1,4 @@
+import type { SeisonessTypes } from "./SeisonessTypes";
 import type { StatusTypes } from "./StatusTypes";
 
 export interface Vtuber {
@@ -11,7 +12,7 @@ export interface Vtuber {
   nb_followers: number;
   debut_date: string;
   height: number;
-  seiso_meter: number;
+  seisoness: SeisonessTypes;
   portrait: string;
   is_selected: boolean;
 }
