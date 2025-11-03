@@ -12,53 +12,14 @@ import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
 import { TextField, TableContainer, Table, TableHead, TableRow, TableBody, Paper, Typography } from "@mui/material";
 
-import { motion, type Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import TableCell from '@mui/material/TableCell';
 import { SeisonessTypes } from "../models/SeisonessTypes";
+import { AffiliationTypes } from "../models/AffiliationTypes";
+import { normalizePortraitName, formatFollowers, formatDate } from "../utils/formatUtils";
+import { cellColor, cellVariants } from "../utils/cellUtils";
 
 const MotionTableCell = motion(TableCell);
-
-const cellVariants: Variants = {
-  hidden: { rotateY: 90, opacity: 0 },
-  visible: (i: number) => ({
-    rotateY: 0,
-    opacity: 1,
-    transition: {
-      delay: i * 0.35,
-      type: "spring",
-      stiffness: 300,
-      damping: 20,
-    },
-  }),
-};
-
-const cellColor = (a: any, b: any, isArray = false) => {
-  if (isArray) {
-    const common = a.some((x: string) => b.includes(x));
-    if (common) {
-      if (a.length === b.length && a.every((x: string) => b.includes(x))) return "green";
-      else return "orange";
-    }
-    return "red";
-  }
-  return a === b ? "green" : "red";
-};
-
-const formatFollowers = (num: number): string => {
-  if (num >= 1000000) return (num / 1000000).toFixed(1).replace(/\.0$/, "") + "M";
-  if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, "") + "k";
-  return num.toString();
-};
-
-const formatDate = (dateStr: string): string => {
-  if (!dateStr) return "";
-  const d = new Date(dateStr);
-  if (isNaN(d.getTime())) return dateStr;
-  const day = String(d.getDate()).padStart(2, "0");
-  const month = String(d.getMonth() + 1).padStart(2, "0");
-  const year = d.getFullYear();
-  return `${day}/${month}/${year}`;
-};
 
 const VtuberLoader: React.FC = () => {
   const [vtubers, setVtubers] = useState<Vtuber[]>([]);
@@ -90,19 +51,14 @@ const VtuberLoader: React.FC = () => {
     }
   }, [currentlySelected, randomSelected, hasWon]);
 
-  const capitalizeFirstLetter = (str: string): string => {
-    if (!str) return "";
-    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-  };
-
   const fetchVtuberData = async () => {
     try {
         const response = await fetch("/Vtube_bdd.csv");
         const csvText = await response.text();
         const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
         const data: Vtuber[] = parsed.data.map((row: any, index: number) => {
-        const firstName = capitalizeFirstLetter(row.first_name.toLowerCase() ?? "");
-        const lastName = capitalizeFirstLetter(row.last_name.toLowerCase() ?? "");
+        const firstName = normalizePortraitName(row.first_name.toLowerCase() ?? "");
+        const lastName = normalizePortraitName(row.last_name.toLowerCase() ?? "");
         const portraitName =
             firstName && lastName
             ? `${firstName}_${lastName}_Portrait.webp`
@@ -120,9 +76,11 @@ const VtuberLoader: React.FC = () => {
           nb_followers: Number(row.nb_followers ?? 0),
           debut_date: row.debut_date ?? "",
           height: Number(row.height ?? 0),
+          affiliation: row.affiliation?? AffiliationTypes.INDIE,
+          country: row.country ? row.country.split(",") : [],
           seisoness: (row.seisoness as SeisonessTypes) ?? SeisonessTypes.YABAI,
           portrait: `/assets/portrait/${portraitName}`,
-          is_selected: row.is_selected === "true",
+          has_been_selected: row.is_selected === "true",
         };
       });
       setVtubers(data);
@@ -157,6 +115,7 @@ const VtuberLoader: React.FC = () => {
   };
 
   const renderValueWithHint = (displayValue: string | number, compareValue?: number, numericValue?: number) => {
+    console.log("displayValue "+displayValue.toString() +" compareValue "+compareValue+" numericValue "+numericValue);
   if (compareValue === undefined || numericValue === undefined || numericValue === compareValue) {
     return <div style={{ textAlign: "center" }}>{displayValue}</div>;
   }
@@ -250,6 +209,8 @@ const VtuberLoader: React.FC = () => {
               <TableCell sx={{ border: "1px solid #ccc" }}>Taille (cm)</TableCell>
               <TableCell sx={{ border: "1px solid #ccc" }}>Genre</TableCell>
               <TableCell sx={{ border: "1px solid #ccc" }}>Spécialités</TableCell>
+              <TableCell sx={{ border: "1px solid #ccc" }}>Affiliation</TableCell>
+              <TableCell sx={{ border: "1px solid #ccc" }}>Pays</TableCell>
               <TableCell sx={{ border: "1px solid #ccc" }}>Seisoness</TableCell>
               <TableCell sx={{ border: "1px solid #ccc" }}>Statut</TableCell>
             </TableRow>
@@ -265,11 +226,13 @@ const VtuberLoader: React.FC = () => {
               const statusBg = cellColor(vt.status, randomSelected?.status);
               const specBg = cellColor(vt.speciality, randomSelected?.speciality, true);
               const seisoMeterBg = cellColor(vt.seisoness, randomSelected?.seisoness);
+              const cntBg = cellColor(vt.country, randomSelected?.country, true);
+              const affBg = cellColor(vt.affiliation, randomSelected?.affiliation);
+
 
               return (
                 <TableRow key={vt.id} hover>
                   <TableCell sx={{ border: "1px solid #ddd" }}>
-                    {/* Portrait n’est pas animé */}
                     <Avatar alt={`${vt.first_name} ${vt.last_name}`} src={vt.portrait} />
                   </TableCell>
 
@@ -300,7 +263,11 @@ const VtuberLoader: React.FC = () => {
                     variants={cellVariants}
                     sx={{ border: "1px solid #ddd", backgroundColor: debutBg }}
                   >
-                    {formatDate(vt.debut_date)}
+                    {renderValueWithHint(
+                      formatDate(vt.debut_date),
+                      randomSelected?.debut_date ? Number(formatDate(randomSelected.debut_date)) : undefined,
+                      Number(formatDate(vt.debut_date.trim()))
+                    )}
                   </MotionTableCell>
 
                   <MotionTableCell
@@ -338,6 +305,26 @@ const VtuberLoader: React.FC = () => {
                     animate="visible"
                     custom={6}
                     variants={cellVariants}
+                    sx={{ border: "1px solid #ddd", backgroundColor: affBg }}
+                  >
+                    {vt.affiliation.toLocaleLowerCase()}
+                  </MotionTableCell>
+
+                  <MotionTableCell
+                    initial="hidden"
+                    animate="visible"
+                    custom={7}
+                    variants={cellVariants}
+                    sx={{ border: "1px solid #ddd", backgroundColor: cntBg }}
+                  >
+                    {vt.country.join(", ")}
+                  </MotionTableCell>
+
+                  <MotionTableCell
+                    initial="hidden"
+                    animate="visible"
+                    custom={8}
+                    variants={cellVariants}
                     sx={{ border: "1px solid #ddd", backgroundColor: seisoMeterBg }}
                   >
                     {vt.seisoness.toLocaleLowerCase()}
@@ -346,7 +333,7 @@ const VtuberLoader: React.FC = () => {
                   <MotionTableCell
                     initial="hidden"
                     animate="visible"
-                    custom={7}
+                    custom={9}
                     variants={cellVariants}
                     sx={{ border: "1px solid #ddd", backgroundColor: statusBg }}
                   >

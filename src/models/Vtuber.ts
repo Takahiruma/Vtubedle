@@ -1,3 +1,4 @@
+import type { AffiliationTypes } from "./AffiliationTypes";
 import type { SeisonessTypes } from "./SeisonessTypes";
 import type { StatusTypes } from "./StatusTypes";
 
@@ -12,7 +13,9 @@ export interface Vtuber {
   nb_followers: number;
   debut_date: string;
   height: number;
+  affiliation: AffiliationTypes;
+  country: string[];
   seisoness: SeisonessTypes;
   portrait: string;
-  is_selected: boolean;
+  has_been_selected: boolean;
 }
