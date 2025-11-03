@@ -218,9 +218,12 @@ const VtuberLoader: React.FC = () => {
 
           <TableBody>
             {comparisonList.map((vt) => {
+              const vtDebutYear = formatDate(vt.debut_date);
+              const randomVtDebutYear = randomSelected?.debut_date ? formatDate(randomSelected.debut_date) : undefined;
+
               const colourBg = cellColor(vt.colour, randomSelected?.colour);
               const followersBg = cellColor(vt.nb_followers, randomSelected?.nb_followers);
-              const debutBg = cellColor(vt.debut_date, randomSelected?.debut_date);
+              const debutBg = cellColor(vtDebutYear, randomVtDebutYear);
               const heightBg = cellColor(vt.height, randomSelected?.height);
               const genderBg = cellColor(vt.gender, randomSelected?.gender);
               const statusBg = cellColor(vt.status, randomSelected?.status);
@@ -264,9 +267,9 @@ const VtuberLoader: React.FC = () => {
                     sx={{ border: "1px solid #ddd", backgroundColor: debutBg }}
                   >
                     {renderValueWithHint(
-                      formatDate(vt.debut_date),
-                      randomSelected?.debut_date ? Number(formatDate(randomSelected.debut_date)) : undefined,
-                      Number(formatDate(vt.debut_date.trim()))
+                      vtDebutYear,
+                      Number(randomVtDebutYear),
+                      Number(vtDebutYear)
                     )}
                   </MotionTableCell>
 
