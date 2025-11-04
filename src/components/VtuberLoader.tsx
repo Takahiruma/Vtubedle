@@ -16,8 +16,8 @@ import { motion } from "framer-motion";
 import TableCell from '@mui/material/TableCell';
 import { SeisonessTypes } from "../models/SeisonessTypes";
 import { AffiliationTypes } from "../models/AffiliationTypes";
-import { normalizePortraitName, formatFollowers, formatDate } from "../utils/formatUtils";
-import { cellColor, cellVariants } from "../utils/cellUtils";
+import { normalizePortraitName, formatDate, formatFollowers } from "../utils/FormatUtils";
+import { cellColor, cellVariants } from "../utils/CellUtils";
 
 const MotionTableCell = motion(TableCell);
 
