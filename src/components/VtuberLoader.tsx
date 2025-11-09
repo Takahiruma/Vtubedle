@@ -44,12 +44,16 @@ const VtuberLoader: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    if (randomSelected && currentlySelected && !hasWon) {
+  if (currentlySelected && randomSelected) {
+    const timer = setTimeout(() => {
       if (randomSelected.id === currentlySelected.id) {
         setHasWon(true);
       }
-    }
-  }, [currentlySelected, randomSelected, hasWon]);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }
+}, [currentlySelected, randomSelected]);
 
   const fetchVtuberData = async () => {
     try {
@@ -67,8 +71,8 @@ const VtuberLoader: React.FC = () => {
             
         return {
           id: Number(row.Id ?? index),
-          first_name: firstName,
-          last_name: lastName,
+          first_name: row.first_name,
+          last_name: row.last_name,
           colour: row.colour ?? "",
           gender: row.gender ?? "",
           status: (row.status as StatusTypes) ?? StatusTypes.ACTIF,
@@ -83,8 +87,16 @@ const VtuberLoader: React.FC = () => {
           has_been_selected: row.is_selected === "true",
         };
       });
+
+      data.sort((a, b) => {
+        const lastNameCompare = a.first_name.localeCompare(b.first_name);
+        if (lastNameCompare !== 0) return lastNameCompare;
+        return a.last_name.localeCompare(b.last_name);
+      });
+
       setVtubers(data);
       localStorage.setItem("vtubers", JSON.stringify(data));
+
       if (data.length > 0) {
         const random = selectRandomVtuber(data);
         setRandomSelected(random);
@@ -141,7 +153,8 @@ const VtuberLoader: React.FC = () => {
 
   return (
     <div style={{ position: "relative" }}>
-      <h2>Liste des VTubers</h2>
+      <h2>Devine le VTuber ou la VTubeuse</h2>
+      <h3>Tape n'importe quel VTuber pour commecer</h3>
 
       {!hasWon && (
         <TextField
@@ -192,7 +205,6 @@ const VtuberLoader: React.FC = () => {
         <Typography variant="h6" color="success.main">Victoire</Typography>
       )}
 
-      <h3>Comparaison des VTubers sélectionnés</h3>
       <TableContainer component={Paper} sx={{ maxHeight: 400, overflowY: "auto" }}>
         <Table
           stickyHeader

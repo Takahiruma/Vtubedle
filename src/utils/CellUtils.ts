@@ -16,6 +16,11 @@ export const cellVariants: Variants = {
 
 export function cellColor(a: any, b: any, isArray = false): string{
   if (isArray) {
+
+    if(a.length == 0 && b.length == 0){
+      return "green";
+    }
+
     const common = a.some((x: string) => b.includes(x));
     if (common) {
       if (a.length === b.length && a.every((x: string) => b.includes(x))) return "green";
