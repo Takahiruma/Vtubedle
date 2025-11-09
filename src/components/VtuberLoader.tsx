@@ -29,6 +29,20 @@ const VtuberLoader: React.FC = () => {
   const [comparisonList, setComparisonList] = useState<Vtuber[]>([]);
   const [hasWon, setHasWon] = useState(false);
 
+  const handleRestart = () => {
+    const storedData = localStorage.getItem("vtubers");
+    if (storedData) {
+      const parsedData: Vtuber[] = JSON.parse(storedData);
+      const random = selectRandomVtuber(parsedData);
+      setRandomSelected(random);
+    }
+    setCurrentlySelected(null);
+    setComparisonList([]);
+    setSearchTerm("");
+    setHasWon(false);
+  };
+
+
   useEffect(() => {
     const storedData = localStorage.getItem("vtubers");
     if (storedData) {
@@ -155,6 +169,13 @@ const VtuberLoader: React.FC = () => {
     <div style={{ position: "relative" }}>
       <h2>Devine le VTuber ou la VTubeuse</h2>
       <h3>Tape n'importe quel VTuber pour commecer</h3>
+
+      {hasWon && (
+        <button onClick={handleRestart} 
+        style={{ marginTop: 16, backgroundColor: "#1976d2", color: "white", border: "none", padding: "8px 16px", borderRadius: 4, cursor: "pointer" }}>
+          Recommencer
+        </button>
+      )}
 
       {!hasWon && (
         <TextField
