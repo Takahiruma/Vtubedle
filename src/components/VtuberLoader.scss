@@ -40,6 +40,8 @@
   text-transform: uppercase;
   box-shadow: c.$shadow-button-glow;
   transition: box-shadow 0.4s ease;
+  width: 45%;
+  align-self: center;
 
   &:hover {
     box-shadow: c.$shadow-button-glow-hover;
