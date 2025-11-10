@@ -1,0 +1,235 @@
+@use "../ui/constants.scss" as c;
+
+.vtuber-loader-container {
+  position: relative;
+  background: radial-gradient(ellipse at center, c.$color-bg-dark 0%, #000000 100%);
+  color: c.$color-text-main;
+  font-family: c.$font-family-main;
+  border-radius: 12px;
+  box-shadow: c.$shadow-primary-glow;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px c.$color-primary-dark, 0 0 30px c.$color-primary;
+    margin-bottom: 4px;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: c.$color-primary-lighter;
+    margin-bottom: 18px;
+  }
+}
+
+.restart-button {
+  margin-top: 20px;
+  background: linear-gradient(45deg, c.$color-primary-dark, #00b0ff);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: c.$shadow-button-glow;
+  transition: box-shadow 0.4s ease;
+
+  &:hover {
+    box-shadow: c.$shadow-button-glow-hover;
+  }
+}
+
+.search-results-paper {
+  position: absolute;
+  z-index: 1400;
+  width: 45%;
+  max-height: 320px;
+  overflow-y: auto;
+  margin-top: 8px;
+  background: c.$color-bg-transparent-dark;
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  box-shadow: 0 0 15px 1px rgba(25, 118, 210, 0.8);
+  scrollbar-width: thin;
+  scrollbar-color: c.$color-primary transparent;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: c.$color-primary;
+    border-radius: 10px;
+  }
+}
+
+.placeholder-empty {
+  margin: 0;
+  padding: 0;
+}
+
+.table-container {
+  max-height: 450px;
+  overflow-y: auto;
+  border-radius: 14px;
+  background: rgba(20, 20, 20, 0.5);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 0 30px 4px rgba(33, 150, 243, 0.5);
+  margin-top: 20px;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: c.$color-primary;
+    border-radius: 10px;
+  }
+}
+
+.vtuber-table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  width: 100%;
+  color: c.$color-text-main;
+
+  thead {
+    tr {
+      background: rgba(25, 118, 210, 0.2);
+      box-shadow: inset 0 0 10px 2px c.$color-primary;
+      border-radius: 12px;
+      backdrop-filter: saturate(180%) blur(12px);
+    }
+
+    th {
+      border: none;
+      padding: 14px 16px;
+      text-align: center;
+      font-weight: 700;
+      color: c.$color-text-secondary;
+      font-size: 0.9rem;
+      white-space: nowrap;
+      user-select: none;
+      position: relative;
+    }
+  }
+
+  tbody {
+    tr {
+      background: c.$color-bg-cell;
+      border-radius: 12px;
+      transition: background-color 0.3s ease;
+      cursor: default;
+      user-select: none;
+    }
+
+    td {
+      border: none;
+      padding: 12px 14px;
+      vertical-align: middle;
+      text-align: center;
+      font-weight: 500;
+      font-size: 0.9rem;
+      position: relative;
+    }
+  }
+}
+
+.avatar-cell {
+  padding: 6px;
+  text-align: center;
+
+  img,
+  .MuiAvatar-root {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    box-shadow: 0 0 8px 2px rgba(33, 150, 243, 0.66);
+    transition: box-shadow 0.3s ease;
+  }
+}
+
+.tooltip-icon {
+  cursor: pointer;
+  margin-left: 8px;
+  vertical-align: middle;
+  color: c.$color-tooltip;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: c.$color-tooltip-hover;
+    filter: c.$shadow-tooltip-glow;
+  }
+}
+
+.header-with-tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  white-space: nowrap;
+  font-weight: 700;
+  color: c.$color-text-secondary;
+}
+
+.hint-icon {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  filter: c.$shadow-hint-glow;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.MuiFormLabel-root {
+  color: c.$color-primary-lighter !important;
+}
+
+.MuiOutlinedInput-root {
+  background-color: rgba(97, 101, 122, 0.85);
+  color: c.$color-text-main;
+  border-radius: 10px;
+
+  &:hover .MuiOutlinedInput-notchedOutline {
+    border-color: c.$color-primary-light;
+  }
+
+  &.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: c.$color-primary;
+    box-shadow: 0 0 12px 1px c.$color-primary;
+    color: c.$color-primary-light !important;
+  }
+
+  .MuiOutlinedInput-input {
+    color: c.$color-text-main;
+  }
+}
+
+.textfield-wrapper {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.MuiTextField-root {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.vtuber-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}

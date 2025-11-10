@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import './App.css'
+import './App.scss'
 import VtuberLoader from './components/VtuberLoader'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <VtuberLoader/>
+    <div style={{ height: "100vh", width: "100vw", display: "flex", flexDirection: "column" }}>
+      <VtuberLoader/>
+    </div>
   )
 }
 

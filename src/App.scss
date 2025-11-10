@@ -1,0 +1,17 @@
+@use 'ui/constants.scss' as c;
+
+html, body, #root {
+  background-color: c.$color-bg-dark;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+body {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
