@@ -255,7 +255,7 @@ const VtuberLoader: React.FC = () => {
                 <TableCell>Couleur</TableCell>
                 <TableCell>
                   <div className="header-with-tooltip">
-                    Followers
+                    Abonnés
                     <Tooltip title="Nombre total d'abonnés sur Youtube.">
                       <HelpOutlineIcon className="tooltip-icon" fontSize="small" />
                     </Tooltip>
@@ -274,7 +274,7 @@ const VtuberLoader: React.FC = () => {
                 <TableCell>
                   <div className="header-with-tooltip">
                     Spécialités
-                    <Tooltip title="Talent pour quoi un Vtuber est reconnu pour. Pas nécessairement ce que stream habituellement le Vtuber">
+                    <Tooltip title="Talent pour lequel un VTuber est reconnu, ce qui ne correspond pas forcément à ce qu'il diffuse habituellement en streaming.">
                       <HelpOutlineIcon className="tooltip-icon" fontSize="small" />
                     </Tooltip>
                   </div>

@@ -5,7 +5,7 @@ Id,first_name,last_name,colour,gender,status,speciality,nb_followers,debut_date,
 4,Hoshimachi,Suisei,blue,F,active,"singing,gaming,drawing",2820000,2018-03-22,160,Hololive,Japan,seiso,FALSE
 5,Shirakami,Fubuki,white,F,active,gaming,2610000,2018-06-01,153,Hololive,Japan,seiso,FALSE
 6,Minato,Aqua,blue,F,affiliate,gaming,2640000,2018-06-01,155,Hololive,Japan,seiso,FALSE
-7,Inugami,Korone,yellow,F,active,gaming,2230000,2019-04-13,156,Hololive,Japan,seiso,FALSE
+7,Inugami,Korone,yellow,F,hiatus,gaming,2230000,2019-04-13,156,Hololive,Japan,seiso,FALSE
 8,Oozora,Subaru,yellow,F,active,"gaming,humour",2260000,2018-09-16,154,Hololive,Japan,seiso,FALSE
 9,Aragami,Ouga,green,M,active,"gaming,voice acting",195000,2020-05-01,192,Hololive,Japan,seiso,FALSE
 10,Kaela,Kovalskia,red,F,active,gaming,800000,2022-03-26,173,Hololive,Indonesia,seiso,FALSE
