@@ -15,7 +15,7 @@ Id,first_name,last_name,colour,gender,status,speciality,nb_followers,debut_date,
 14,Tokino,Sora,blue,F,active,singing,1310000,2017-09-07,160,Hololive,Japan,seiso,FALSE
 15,Kobo,Kanaeru,blue,F,active,"singing, gaming",2730000,2022-03-27,150,Hololive,Indonesia,seiso,FALSE
 16,Takane,Lui,pink,F,active,singing,1100000,2021-11-27,161,Hololive,Japan,seiso,FALSE
-17,Hakos,Baelz,red,F,active,"gaming, dancing",1100000,2021-08-23,149,Hololive,Autralia,seiso,FALSE
+17,Hakos,Baelz,red,F,active,"gaming, dancing",1100000,2021-08-23,149,Hololive,Australia,seiso,FALSE
 18,Mori,Calliope,pink,F,active,singing,2570000,2020-11-12,167,Hololive,USA,seiso,FALSE
 19,Cecilia,Immergreen,green,F,active,gaming,466000,2024-07-23,162,Hololive,German,seiso,FALSE
 20,Gigi,Murin,orange,F,active,"gaming,humour",524000,2024-07-22,153,Hololive,USA,yabai,FALSE
@@ -52,3 +52,8 @@ Id,first_name,last_name,colour,gender,status,speciality,nb_followers,debut_date,
 51,Sameko,Saba,blue,F,active,,1390000,2025-06-28,150,Indie,USA,yabai,FALSE
 52,Dooby3D,,yellow,F,active,,510000,2024-10-25,150,Indie,USA,seiso,FALSE
 53,Chacha,,purple,F,active,roleplay,254000,2023-05-14,160,Indie,USA,yabai,FALSE
+54,Katchan,,pink,F,active,drawing,21100,2022-04-02,167,Indie,France,yabai,FALSE
+55,Antoine,Daniel,brown,M,hiatus,humour,2820000,2021-10-30,185,Indie,France,yabai,FALSE
+56,Miel,Crapouille,orange,F,active,humour,32200,2021-04-22,150,Indie,France,yabai,FALSE
+57,Just1Chat,,yellow,O,active,humour,233000,2022-03-30,165,Indie,France,yabai,FALSE
+58,Sol,,orange,F,active,gaming,13100,2021-01-15,150,Indie,France,seiso,FALSE
