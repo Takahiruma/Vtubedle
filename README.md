@@ -1,7 +1,9 @@
 # Vtubedle
 
 Quizz game like wordle. But you have to guess a random Vtuber.
-The game is still WIP. There is unique guesses per day.
+The game is still WIP. the game is not published yet.
+
+There is no unique guesses per day. You can replay as much as you like
 
 ## screen
 Main screen
