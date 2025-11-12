@@ -1,0 +1,21 @@
+@use "../../assets/constants.scss" as c;
+
+.restart-button {
+  margin-top: 20px;
+  background: linear-gradient(45deg, c.$color-primary-dark, #00b0ff);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: c.$shadow-button-glow;
+  transition: box-shadow 0.4s ease;
+  width: 45%;
+  align-self: center;
+
+  &:hover {
+    box-shadow: c.$shadow-button-glow-hover;
+  }
+}

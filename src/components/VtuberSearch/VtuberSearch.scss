@@ -1,0 +1,58 @@
+@use "../../assets/constants.scss" as c;
+
+.search-results-paper {
+  position: absolute;
+  z-index: 1400;
+  width: 45%;
+  max-height: 320px;
+  overflow-y: auto;
+  margin-top: 8px;
+  background: c.$color-bg-transparent-dark;
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  box-shadow: 0 0 15px 1px rgba(25, 118, 210, 0.8);
+  scrollbar-width: thin;
+  scrollbar-color: c.$color-primary transparent;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: c.$color-primary;
+    border-radius: 10px;
+  }
+}
+
+.placeholder-empty {
+  margin: 0;
+  padding: 0;
+}
+
+.MuiFormLabel-root {
+  color: c.$color-primary-lighter !important;
+}
+
+.MuiOutlinedInput-root {
+  background-color: rgba(97, 101, 122, 0.85);
+  color: c.$color-text-main;
+  border-radius: 10px;
+
+  &:hover .MuiOutlinedInput-notchedOutline {
+    border-color: c.$color-primary-light;
+  }
+
+  &.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: c.$color-primary;
+    box-shadow: 0 0 12px 1px c.$color-primary;
+    color: c.$color-primary-light !important;
+  }
+
+  .MuiOutlinedInput-input {
+    color: c.$color-text-main;
+  }
+}
+
+.MuiTextField-root {
+  width: 100%;
+  box-sizing: border-box;
+}

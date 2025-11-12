@@ -1,0 +1,42 @@
+@use "../../assets/constants.scss" as c;
+
+.vtuber-loader-container {
+  position: relative;
+  background: radial-gradient(ellipse at center, c.$color-bg-dark 0%, #000000 100%);
+  color: c.$color-text-main;
+  font-family: c.$font-family-main;
+  border-radius: 12px;
+  box-shadow: c.$shadow-primary-glow;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 0 10px c.$color-primary-dark, 0 0 30px c.$color-primary;
+    margin-bottom: 4px;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: c.$color-primary-lighter;
+    margin-bottom: 18px;
+  }
+}
+
+.vtuber-container {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textfield-wrapper {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}

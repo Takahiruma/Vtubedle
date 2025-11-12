@@ -1,11 +1,11 @@
 import './App.scss'
-import VtuberLoader from './components/VtuberLoader'
+import VHome from './pages/Home/VHome'
 
 function App() {
 
   return (
     <div style={{ height: "100vh", width: "100vw", display: "flex", flexDirection: "column" }}>
-      <VtuberLoader/>
+      <VHome/>
     </div>
   )
 }
