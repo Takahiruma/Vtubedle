@@ -17,7 +17,6 @@
     border-radius: 10px;
   }
 
-  // Pour écrans moyens et petits, réduire largeur, padding, etc.
   @media (max-width: 900px) {
     max-height: 350px;
     margin-top: 12px;
@@ -26,7 +25,7 @@
   @media (max-width: 600px) {
     max-height: 300px;
     margin-top: 8px;
-    overflow-x: auto; // Scroll horizontal si dépassement
+    overflow-x: auto;
   }
 }
 
@@ -54,6 +53,8 @@
       white-space: nowrap;
       user-select: none;
       position: relative;
+      max-width: 80px;
+
 
       @media (max-width: 900px) {
         padding: 10px 8px;
@@ -77,7 +78,7 @@
     }
 
     td {
-      border: none;
+      border: 1px solid c.$color-primary-lighter;
       padding: 12px 14px;
       vertical-align: middle;
       text-align: center;

@@ -20,7 +20,7 @@ import RenderValueWithHint from "../RenderValueWithHint/RenderValueWithHint";
 
 import "./VtuberComparaisonTable.scss"
 
-const MotionTableCell = motion(TableCell);
+const MotionTableCell = motion.create(TableCell);
 
 interface Props {
   comparisonList: Vtuber[];
