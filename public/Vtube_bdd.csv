@@ -57,3 +57,8 @@ Id,first_name,last_name,colour,gender,status,speciality,nb_followers,debut_date,
 56,Miel,Crapouille,orange,F,active,humour,32200,2021-04-22,150,Indie,France,yabai,FALSE
 57,Just1Chat,,yellow,O,active,humour,233000,2022-03-30,165,Indie,France,yabai,FALSE
 58,Sol,,orange,F,active,gaming,13100,2021-01-15,150,Indie,France,seiso,FALSE
+59,Robocosan,,purple,F,active,,1130000,2018-03-09,154,Hololive,Japan,seiso,FALSE
+60,AZKi,,pink,F,active,,1290000,2018-11-15,158,Hololive,Japan,seiso,FALSE
+61,Natsuiro,Mastsuri,orange,F,active,,1550000,2018-06-01,152,Hololive,Japan,seiso,FALSE
+62,Akai,Haato,red,F,active,horror,1580000,2018-06-02,154,Hololive,Japan,seiso,FALSE
+63,Aki,Rosenthal,purple,F,active,dance,1010000,2018-06-01,162,Hololive,Japan,seiso,FALSE
