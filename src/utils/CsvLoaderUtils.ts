@@ -41,6 +41,7 @@ export async function loadVtuberData(): Promise<Vtuber[]> {
         country: row.country ? row.country.split(",") : [],
         seisoness: (row.seisoness as SeisonessTypes) ?? SeisonessTypes.YABAI,
         portrait: `/assets/portrait/${portraitName}`,
+        nickname: row.nickname? row.nickname.split(',') : [],
         has_been_selected: row.is_selected === "true",
       };
     });

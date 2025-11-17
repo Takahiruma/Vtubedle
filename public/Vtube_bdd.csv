@@ -1,74 +1,74 @@
-Id,first_name,last_name,colour,gender,status,speciality,nb_followers,debut_date,height,affiliation,country,seisoness,has_been_selected
-1,Gawr,Gura,blue,F,graduate,gaming,4740000,2020-09-13,141,Hololive,USA,yabai,FALSE
-2,Houshou,Marine,red,F,active,singing,4250000,2019-08-11,150,Hololive,Japan,yabai,FALSE
-3,Usada,Pekora,blue,F,active,gaming,2740000,2019-07-17,153,Hololive,Japan,seiso,FALSE
-4,Hoshimachi,Suisei,blue,F,active,"singing,gaming,drawing",2820000,2018-03-22,160,Hololive,Japan,seiso,FALSE
-5,Shirakami,Fubuki,white,F,active,gaming,2610000,2018-06-01,153,Hololive,Japan,seiso,FALSE
-6,Minato,Aqua,pink,F,affiliate,gaming,2640000,2018-06-01,155,Hololive,Japan,seiso,FALSE
-7,Inugami,Korone,yellow,F,hiatus,gaming,2230000,2019-04-13,156,Hololive,Japan,seiso,FALSE
-8,Oozora,Subaru,yellow,F,active,"gaming,humour",2260000,2018-09-16,154,Hololive,Japan,seiso,FALSE
-9,Aragami,Ouga,green,M,active,"gaming,voice acting",195000,2020-05-01,192,Hololive,Japan,seiso,FALSE
-10,Kaela,Kovalskia,red,F,active,gaming,800000,2022-03-26,173,Hololive,Indonesia,seiso,FALSE
-11,Rikka,,pink,M,active,"gaming,drawing",258000,2019-10-20,179,Hololive,Japan,seiso,FALSE
-12,Kageyama,Shien,black,M,active,"gaming,streaming",224000,2020-04-30,176,Hololive,Japan,yabai,FALSE
-13,Yatogami,Fuma,yellow,M,active,"gaming,voice acting",159000,2021-03-10,168,Hololive,Japan,yabai,FALSE
-14,Tokino,Sora,blue,F,active,singing,1310000,2017-09-07,160,Hololive,Japan,seiso,FALSE
-15,Kobo,Kanaeru,blue,F,active,"singing, gaming",2730000,2022-03-27,150,Hololive,Indonesia,seiso,FALSE
-16,Takane,Lui,pink,F,active,singing,1100000,2021-11-27,161,Hololive,Japan,seiso,FALSE
-17,Hakos,Baelz,red,F,active,"gaming, dancing",1100000,2021-08-23,149,Hololive,Australia,seiso,FALSE
-18,Mori,Calliope,pink,F,active,singing,2570000,2020-11-12,167,Hololive,USA,seiso,FALSE
-19,Cecilia,Immergreen,green,F,active,gaming,466000,2024-07-23,162,Hololive,German,seiso,FALSE
-20,Gigi,Murin,orange,F,active,"gaming,humour",524000,2024-07-22,153,Hololive,USA,yabai,FALSE
-21,Elizabeth,Rose Bloodflame,red,F,active,"singing,voice acting",578000,2024-07-22,171,Hololive,UK,seiso,FALSE
-22,Raora,Panthera,pink,F,active,drawing,576000,2024-07-23,155,Hololive,Italia,seiso,FALSE
-23,Koseki,Bijou,purple,F,active,gaming,899000,2023-07-30,140,Hololive,USA,seiso,FALSE
-24,Nerissa,Ravencroft,blue,F,active,singing,930000,2023-07-31,175,Hololive,USA,yabai,FALSE
-25,Mococo,Abyssgard,pink,F,active,singing,1250000,2023-07-31,155,Hololive,USA,seiso,FALSE
-26,Fuwawa,Abyssgard,blue,F,active,singing,1250000,2023-07-31,155,Hololive,USA,yabai,FALSE
-27,Shiori,Novella,purple,F,active,,681000,2023-07-30,163,Hololive,USA,yabai,FALSE
-28,Irys,,pink,F,active,dancing,1120000,2021-07-11,166,Hololive,USA,yabai,FALSE
-29,Ouro ,Kronii,blue,F,active,gaming,1110000,2021-08-23,168,Hololive,Canada,seiso,FALSE
-30,Ceres,Fauna,green,F,graduate,"gaming,ASMR",1000000,2021-08-23,164,Hololive,USA,seiso,FALSE
-31,Nanashi,Mumei,brown,F,graduate,gaming,1180000,2021-08-23,156,Hololive,USA,seiso,FALSE
-32,Amelia,Watson,yellow,F,affiliate,gaming,1770000,2020-09-13,150,Hololive,USA,seiso,FALSE
-33,Kiara,Takanashi,orange,F,active,singing,1610000,2020-09-12,165,Hololive,Austria,yabai,FALSE
-34,Ninomae,Ina'nis,purple,F,active,drawing,1650000,2020-09-13,157,Hololive,USA,seiso,FALSE
-35,Tsukumo,Sana,pink,F,graduate,drawing,415000,2021-08-23,169,Hololive,USA,seiso,FALSE
-36,Todoroki,Hajime,purple,F,active,"singing,dancing",1050000,2023-09-10,155,Hololive,Japan,seiso,FALSE
-37,Axel,Syrios,orange,M,active,gaming,244000,2022-07-24,184,Hololive,USA,seiso,FALSE
-38,Gavis,Bettel,pink,M,active,gaming,195000,2023-01-08,180,Hololive,USA,seiso,FALSE
-39,Jurard,T Rexford,black,M,active,gaming,166000,2023-11-18,178,Hololive,USA,seiso,FALSE
-40,Ironmouse,,pink,F,active,singing,1420000,2017-08-04,147,Indie,Puerto Rico,yabai,FALSE
-41,Filian,,purple,M,active,humour,3120000,2021-04-17,135,Indie,Canada,yabai,FALSE
-42,Shylily,,blue,F,active,,1010000,2022-01-10,147,Indie,German,yabai,FALSE
-43,Bao ,The Whale,blue,F,active,"humour,singing",1070000,2020-10-30,152,Indie,"USA, Vietnam",yabai,FALSE
-44,Dokibird,,yellow,F,active,gaming,885000,2020-05-04,157,Indie,Canada,seiso,FALSE
-45,Chibidoki,,pink,F,active,humour,990000,2021-07-03,163,Indie,USA,yabai,FALSE
-46,PorcelainMaid,,purple,M,active,,304000,2019-03-10,185,Indie,USA,seiso,FALSE
-47,Mint,Fantome,green,F,active,singing,419000,2020-07-24,149,Indie,USA,yabai,FALSE
-48,Neurosama,,brown,O,active,AI,788000,2022-12-19,172,Indie,England,seiso,FALSE
-49,Shxtou,,purple,M,active,,1640000,2021-10-02,174,Indie,"USA, Vietnam",seiso,FALSE
-50,Nimi,Nightmare,green,F,active,,691000,2025-01-17,158,Indie,USA,seiso,FALSE
-51,Sameko,Saba,blue,F,active,,1390000,2025-06-28,150,Indie,USA,yabai,FALSE
-52,Dooby3D,,yellow,F,active,,510000,2024-10-25,150,Indie,USA,seiso,FALSE
-53,Chacha,,purple,F,active,roleplay,254000,2023-05-14,160,Indie,USA,yabai,FALSE
-54,Katchan,,pink,F,active,drawing,21100,2022-04-02,167,Indie,France,yabai,FALSE
-55,Antoine,Daniel,brown,M,hiatus,humour,2820000,2021-10-30,185,Indie,France,yabai,FALSE
-56,Miel,Crapouille,orange,F,active,humour,32200,2021-04-22,150,Indie,France,yabai,FALSE
-57,Just1Chat,,yellow,O,active,humour,233000,2022-03-30,165,Indie,France,yabai,FALSE
-58,Sol,,orange,F,active,gaming,13100,2021-01-15,150,Indie,France,seiso,FALSE
-59,Robocosan,,purple,F,active,,1130000,2018-03-09,154,Hololive,Japan,seiso,FALSE
-60,AZKi,,pink,F,active,,1290000,2018-11-15,158,Hololive,Japan,seiso,FALSE
-61,Natsuiro,Matsuri,orange,F,active,,1550000,2018-06-01,152,Hololive,Japan,seiso,FALSE
-62,Akai,Haato,red,F,active,horror,1580000,2018-06-02,154,Hololive,Japan,seiso,FALSE
-63,Aki,Rosenthal,purple,F,active,dance,1010000,2018-06-01,162,Hololive,Japan,seiso,FALSE
-64,Murasaki,Shion,purple,F,graduate,gaming,1330000,2018-08-17,145,Hololive,Japan,seiso,FALSE
-65,Yuzuki,Choco,pink,F,active,,1110000,2018-08-04,165,Hololive,Japan,yabai,FALSE
-66,Nakiri,Ayame,red,F,active,,1680000,2018-08-03,152,Hololive,Japan,seiso,FALSE
-67,Ookami,Mio,red,F,active,gaming,1330000,2018-12-07,160,Hololive,Japan,seiso,FALSE
-68,Shirogane,Noel,grey,F,active,"gaming, ASMR",2040000,2019-08-08,158,Hololive,Japan,yabai,FALSE
-69,Shiranui,Flare,orange,F,active,drawing,1140000,2019-08-07,158,Hololive,Japan,yabai,FALSE
-70,La+,Darkness,purple,F,active,dancing,1450000,2021-11-26,139,Hololive,Japan,yabai,FALSE
-71,Hakui,Koyori,pink,F,active,,1330000,2021-11-28,153,Hololive,Japan,seiso,FALSE
-72,Kazama,Iroha,green,F,active,,1130000,2021-11-30,156,Hololive,Japan,seiso,FALSE
-73,Sakamata,Chloe,red,F,affiliate,,1340000,2021-11-29,148,Hololive,Japan,yabai,FALSE
+Id,first_name,last_name,colour,gender,status,speciality,nb_followers,debut_date,height,affiliation,country,seisoness,nickname,has_been_selected
+1,Gawr,Gura,blue,F,graduate,gaming,4740000,2020-09-13,141,Hololive,USA,yabai,"Gooba, Goob, Grumbus",FALSE
+2,Houshou,Marine,red,F,active,singing,4250000,2019-08-11,150,Hololive,Japan,yabai,baba,FALSE
+3,Usada,Pekora,blue,F,active,gaming,2740000,2019-07-17,153,Hololive,Japan,seiso,,FALSE
+4,Hoshimachi,Suisei,blue,F,active,"singing,gaming,drawing",2820000,2018-03-22,160,Hololive,Japan,seiso,,FALSE
+5,Shirakami,Fubuki,white,F,active,gaming,2610000,2018-06-01,153,Hololive,Japan,seiso,,FALSE
+6,Minato,Aqua,pink,F,affiliate,gaming,2640000,2018-06-01,155,Hololive,Japan,seiso,,FALSE
+7,Inugami,Korone,yellow,F,hiatus,gaming,2230000,2019-04-13,156,Hololive,Japan,seiso,,FALSE
+8,Oozora,Subaru,yellow,F,active,"gaming,humour",2260000,2018-09-16,154,Hololive,Japan,seiso,duck,FALSE
+9,Aragami,Ouga,green,M,active,"gaming,voice acting",195000,2020-05-01,192,Hololive,Japan,seiso,,FALSE
+10,Kaela,Kovalskia,red,F,active,gaming,800000,2022-03-26,173,Hololive,Indonesia,seiso,,FALSE
+11,Rikka,,pink,M,active,"gaming,drawing",258000,2019-10-20,179,Hololive,Japan,seiso,,FALSE
+12,Kageyama,Shien,black,M,active,"gaming,streaming",224000,2020-04-30,176,Hololive,Japan,yabai,,FALSE
+13,Yatogami,Fuma,yellow,M,active,"gaming,voice acting",159000,2021-03-10,168,Hololive,Japan,yabai,,FALSE
+14,Tokino,Sora,blue,F,active,singing,1310000,2017-09-07,160,Hololive,Japan,seiso,,FALSE
+15,Kobo,Kanaeru,blue,F,active,"singing, gaming",2730000,2022-03-27,150,Hololive,Indonesia,seiso,,FALSE
+16,Takane,Lui,pink,F,active,singing,1100000,2021-11-27,161,Hololive,Japan,seiso,,FALSE
+17,Hakos,Baelz,red,F,active,"gaming, dancing",1100000,2021-08-23,149,Hololive,Australia,seiso,,FALSE
+18,Mori,Calliope,pink,F,active,singing,2570000,2020-11-12,167,Hololive,USA,seiso,,FALSE
+19,Cecilia,Immergreen,green,F,active,gaming,466000,2024-07-23,162,Hololive,German,seiso,Cc,FALSE
+20,Gigi,Murin,orange,F,active,"gaming,humour",524000,2024-07-22,153,Hololive,USA,yabai,,FALSE
+21,Elizabeth,Rose Bloodflame,red,F,active,"singing,voice acting",578000,2024-07-22,171,Hololive,UK,seiso,ERB,FALSE
+22,Raora,Panthera,pink,F,active,drawing,576000,2024-07-23,155,Hololive,Italia,seiso,,FALSE
+23,Koseki,Bijou,purple,F,active,gaming,899000,2023-07-30,140,Hololive,USA,seiso,Biboo,FALSE
+24,Nerissa,Ravencroft,blue,F,active,singing,930000,2023-07-31,175,Hololive,USA,yabai,,FALSE
+25,Mococo,Abyssgard,pink,F,active,singing,1250000,2023-07-31,155,Hololive,USA,seiso,,FALSE
+26,Fuwawa,Abyssgard,blue,F,active,singing,1250000,2023-07-31,155,Hololive,USA,yabai,,FALSE
+27,Shiori,Novella,purple,F,active,,681000,2023-07-30,163,Hololive,USA,yabai,,FALSE
+28,Irys,,pink,F,active,dancing,1120000,2021-07-11,166,Hololive,USA,yabai,,FALSE
+29,Ouro ,Kronii,blue,F,active,gaming,1110000,2021-08-23,168,Hololive,Canada,seiso,,FALSE
+30,Ceres,Fauna,green,F,graduate,"gaming,ASMR",1000000,2021-08-23,164,Hololive,USA,seiso,,FALSE
+31,Nanashi,Mumei,brown,F,graduate,gaming,1180000,2021-08-23,156,Hololive,USA,seiso,,FALSE
+32,Amelia,Watson,yellow,F,affiliate,gaming,1770000,2020-09-13,150,Hololive,USA,seiso,,FALSE
+33,Kiara,Takanashi,orange,F,active,singing,1610000,2020-09-12,165,Hololive,Austria,yabai,,FALSE
+34,Ninomae,Ina'nis,purple,F,active,drawing,1650000,2020-09-13,157,Hololive,USA,seiso,,FALSE
+35,Tsukumo,Sana,pink,F,graduate,drawing,415000,2021-08-23,169,Hololive,USA,seiso,,FALSE
+36,Todoroki,Hajime,purple,F,active,"singing,dancing",1050000,2023-09-10,155,Hololive,Japan,seiso,Bancho,FALSE
+37,Axel,Syrios,orange,M,active,gaming,244000,2022-07-24,184,Hololive,USA,seiso,,FALSE
+38,Gavis,Bettel,pink,M,active,gaming,195000,2023-01-08,180,Hololive,USA,seiso,,FALSE
+39,Jurard,T Rexford,black,M,active,gaming,166000,2023-11-18,178,Hololive,USA,seiso,,FALSE
+40,Ironmouse,,pink,F,active,singing,1420000,2017-08-04,147,Indie,Puerto Rico,yabai,,FALSE
+41,Filian,,purple,M,active,humour,3120000,2021-04-17,135,Indie,Canada,yabai,Philipino Franck,FALSE
+42,Shylily,,blue,F,active,,1010000,2022-01-10,147,Indie,German,yabai,,FALSE
+43,Bao ,The Whale,blue,F,active,"humour,singing",1070000,2020-10-30,152,Indie,"USA, Vietnam",yabai,,FALSE
+44,Dokibird,,yellow,F,active,gaming,885000,2020-05-04,157,Indie,Canada,seiso,,FALSE
+45,Chibidoki,,pink,F,active,humour,990000,2021-07-03,163,Indie,USA,yabai,,FALSE
+46,PorcelainMaid,,purple,M,active,,304000,2019-03-10,185,Indie,USA,seiso,Jowol,FALSE
+47,Mint,Fantome,green,F,active,singing,419000,2020-07-24,149,Indie,USA,yabai,,FALSE
+48,Neurosama,,brown,O,active,AI,788000,2022-12-19,172,Indie,England,seiso,,FALSE
+49,Shxtou,,purple,M,active,,1640000,2021-10-02,174,Indie,"USA, Vietnam",seiso,Shotou,FALSE
+50,Nimi,Nightmare,green,F,active,,691000,2025-01-17,158,Indie,USA,seiso,,FALSE
+51,Sameko,Saba,blue,F,active,,1390000,2025-06-28,150,Indie,USA,yabai,,FALSE
+52,Dooby3D,,yellow,F,active,,510000,2024-10-25,150,Indie,USA,seiso,,FALSE
+53,Chacha,,purple,F,active,roleplay,254000,2023-05-14,160,Indie,USA,yabai,Mom,FALSE
+54,Katchan,,pink,F,active,drawing,21100,2022-04-02,167,Indie,France,yabai,,FALSE
+55,Antoine,Daniel,brown,M,hiatus,humour,2820000,2021-10-30,185,Indie,France,yabai,,FALSE
+56,Miel,Crapouille,orange,F,active,humour,32200,2021-04-22,150,Indie,France,yabai,,FALSE
+57,Just1Chat,,yellow,O,active,humour,233000,2022-03-30,165,Indie,France,yabai,,FALSE
+58,Sol,,orange,F,active,gaming,13100,2021-01-15,150,Indie,France,seiso,,FALSE
+59,Robocosan,,purple,F,active,,1130000,2018-03-09,154,Hololive,Japan,seiso,,FALSE
+60,AZKi,,pink,F,active,,1290000,2018-11-15,158,Hololive,Japan,seiso,,FALSE
+61,Natsuiro,Matsuri,orange,F,active,,1550000,2018-06-01,152,Hololive,Japan,seiso,,FALSE
+62,Akai,Haato,red,F,active,horror,1580000,2018-06-02,154,Hololive,Japan,seiso,Hachaama,FALSE
+63,Aki,Rosenthal,purple,F,active,dance,1010000,2018-06-01,162,Hololive,Japan,seiso,,FALSE
+64,Murasaki,Shion,purple,F,graduate,gaming,1330000,2018-08-17,145,Hololive,Japan,seiso,,FALSE
+65,Yuzuki,Choco,pink,F,active,,1110000,2018-08-04,165,Hololive,Japan,yabai,,FALSE
+66,Nakiri,Ayame,red,F,active,,1680000,2018-08-03,152,Hololive,Japan,seiso,,FALSE
+67,Ookami,Mio,red,F,active,gaming,1330000,2018-12-07,160,Hololive,Japan,seiso,,FALSE
+68,Shirogane,Noel,grey,F,active,"gaming, ASMR",2040000,2019-08-08,158,Hololive,Japan,yabai,,FALSE
+69,Shiranui,Flare,orange,F,active,drawing,1140000,2019-08-07,158,Hololive,Japan,yabai,,FALSE
+70,La+,Darkness,purple,F,active,dancing,1450000,2021-11-26,139,Hololive,Japan,yabai,,FALSE
+71,Hakui,Koyori,pink,F,active,,1330000,2021-11-28,153,Hololive,Japan,seiso,,FALSE
+72,Kazama,Iroha,green,F,active,,1130000,2021-11-30,156,Hololive,Japan,seiso,,FALSE
+73,Sakamata,Chloe,red,F,affiliate,,1340000,2021-11-29,148,Hololive,Japan,yabai,,FALSE

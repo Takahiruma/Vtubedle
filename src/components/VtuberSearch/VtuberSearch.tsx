@@ -59,7 +59,10 @@ const VtuberSearch: React.FC<Props> = ({
                     className="avatar-cell"
                   />
                 </ListItemAvatar>
-                <ListItemText primary={`${vt.first_name} ${vt.last_name}`} />
+                <ListItemText primary={`${vt.first_name} ${vt.last_name}`} 
+                secondary={
+                      vt.nickname  && vt.nickname.length > 0 ? `Alias : ${vt.nickname}` : undefined
+                }/>
               </ListItemButton>
             </ListItem>
           ))}

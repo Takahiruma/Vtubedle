@@ -18,4 +18,5 @@ export interface Vtuber {
   seisoness: SeisonessTypes;
   portrait: string;
   has_been_selected: boolean;
+  nickname: string[];
 }

@@ -51,8 +51,19 @@ const VHome: React.FC = () => {
 
   const filteredVtubers = vtubers.filter((vt) => {
     if (comparisonList.find((c) => c.id === vt.id)) return false;
+
+    const term = searchTerm.toLowerCase();
     const fullName = `${vt.first_name} ${vt.last_name}`.toLowerCase();
-    return fullName.includes(searchTerm.toLowerCase());
+    const hasMatchingNickname = vt.nickname?.some((alias) =>
+    alias.toLowerCase().includes(term)
+  );
+
+    return (
+      fullName.includes(term) ||
+      vt.first_name.toLowerCase().includes(term) ||
+      vt.last_name.toLowerCase().includes(term) ||
+      hasMatchingNickname
+    );
   });
 
   const addToComparison = (vtuber: Vtuber) => {
