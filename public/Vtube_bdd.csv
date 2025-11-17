@@ -59,6 +59,16 @@ Id,first_name,last_name,colour,gender,status,speciality,nb_followers,debut_date,
 58,Sol,,orange,F,active,gaming,13100,2021-01-15,150,Indie,France,seiso,FALSE
 59,Robocosan,,purple,F,active,,1130000,2018-03-09,154,Hololive,Japan,seiso,FALSE
 60,AZKi,,pink,F,active,,1290000,2018-11-15,158,Hololive,Japan,seiso,FALSE
-61,Natsuiro,Mastsuri,orange,F,active,,1550000,2018-06-01,152,Hololive,Japan,seiso,FALSE
+61,Natsuiro,Matsuri,orange,F,active,,1550000,2018-06-01,152,Hololive,Japan,seiso,FALSE
 62,Akai,Haato,red,F,active,horror,1580000,2018-06-02,154,Hololive,Japan,seiso,FALSE
 63,Aki,Rosenthal,purple,F,active,dance,1010000,2018-06-01,162,Hololive,Japan,seiso,FALSE
+64,Murasaki,Shion,purple,F,graduate,gaming,1330000,2018-08-17,145,Hololive,Japan,seiso,FALSE
+65,Yuzuki,Choco,pink,F,active,,1110000,2018-08-04,165,Hololive,Japan,yabai,FALSE
+66,Nakiri,Ayame,red,F,active,,1680000,2018-08-03,152,Hololive,Japan,seiso,FALSE
+67,Ookami,Mio,red,F,active,gaming,1330000,2018-12-07,160,Hololive,Japan,seiso,FALSE
+68,Shirogane,Noel,grey,F,active,"gaming, ASMR",2040000,2019-08-08,158,Hololive,Japan,yabai,FALSE
+69,Shiranui,Flare,orange,F,active,drawing,1140000,2019-08-07,158,Hololive,Japan,yabai,FALSE
+70,La+,Darkness,purple,F,active,dancing,1450000,2021-11-26,139,Hololive,Japan,yabai,FALSE
+71,Hakui,Koyori,pink,F,active,,1330000,2021-11-28,153,Hololive,Japan,seiso,FALSE
+72,Kazama,Iroha,green,F,active,,1130000,2021-11-30,156,Hololive,Japan,seiso,FALSE
+73,Sakamata,Chloe,red,F,affiliate,,1340000,2021-11-29,148,Hololive,Japan,yabai,FALSE
