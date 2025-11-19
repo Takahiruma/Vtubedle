@@ -11,8 +11,8 @@ export function decodeVtuber(encoded: string): Vtuber {
 }
 
 export function selectRandomVtuber(vtubers: Vtuber[]): Vtuber | null {
-  const candidates = vtubers.filter(v => !v.has_been_selected);
-  if (candidates.length === 0) return null;
-  const randomIndex = Math.floor(Math.random() * candidates.length);
-  return candidates[randomIndex];
+  const possibleVtubers = vtubers.filter(v => !v.has_been_selected);
+  if (possibleVtubers.length === 0) return null;
+  const randomIndex = Math.floor(Math.random() * possibleVtubers.length);
+  return possibleVtubers[randomIndex];
 }

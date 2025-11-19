@@ -14,19 +14,17 @@ export const cellVariants: Variants = {
   }),
 };
 
-export function cellColor(a: any, b: any, isArray = false): string{
-  if (isArray) {
+export function cellColor(selectedVtParam: any, randomVtParam: any): string{
+  const arraySelectedparam = Array.isArray(selectedVtParam) ? selectedVtParam : [selectedVtParam];
+  const arrayRandomparam = Array.isArray(randomVtParam) ? randomVtParam : [randomVtParam];
 
-    if(a.length == 0 && b.length == 0){
-      return "green";
-    }
+  const areEqual =
+    arraySelectedparam.length === arrayRandomparam.length &&
+    arraySelectedparam.every((val, index) => val === arrayRandomparam[index]);
+  if (areEqual) return "green";
 
-    const common = a.some((x: string) => b.includes(x));
-    if (common) {
-      if (a.length === b.length && a.every((x: string) => b.includes(x))) return "green";
-      else return "orange";
-    }
-    return "red";
-  }
-  return a === b ? "green" : "red";
+  const setRandom = new Set(arrayRandomparam);
+  if (arraySelectedparam.some(item => setRandom.has(String(item).trim()))) return "orange";
+
+  return "red";
 };

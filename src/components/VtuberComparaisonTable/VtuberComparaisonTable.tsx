@@ -95,9 +95,9 @@ const VtuberComparisonTable: React.FC<Props> = ({ comparisonList, randomSelected
             const heightBg = cellColor(vt.height, randomSelected?.height);
             const genderBg = cellColor(vt.gender, randomSelected?.gender);
             const statusBg = cellColor(vt.status, randomSelected?.status);
-            const specBg = cellColor(vt.speciality, randomSelected?.speciality, true);
+            const specBg = cellColor(vt.speciality, randomSelected?.speciality);
             const seisoMeterBg = cellColor(vt.seisoness, randomSelected?.seisoness);
-            const cntBg = cellColor(vt.country, randomSelected?.country, true);
+            const cntBg = cellColor(vt.country, randomSelected?.country);
             const affBg = cellColor(vt.affiliation, randomSelected?.affiliation);
 
             return (
