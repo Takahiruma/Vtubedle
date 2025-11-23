@@ -7,8 +7,12 @@ import type { Vtuber } from "../../models/Vtuber";
 import { loadVtuberData } from "../../utils/CsvLoaderUtils";
 import { selectRandomVtuber } from "../../utils/VtubeUtils";
 import "./VHome.scss"
+import { useSQLite } from "../../components/SQliteProvider/SQliteProvider";
+import { getAllVtubers } from "../../utils/db";
 
 const VHome: React.FC = () => {
+  const { db, isDbReady  } = useSQLite();
+  
   const [vtubers, setVtubers] = useState<Vtuber[]>([]);
   const [currentlySelected, setCurrentlySelected] = useState<Vtuber | null>(null);
   const [randomSelected, setRandomSelected] = useState<Vtuber | null>(null);
@@ -17,6 +21,17 @@ const VHome: React.FC = () => {
   const [hasWon, setHasWon] = useState(false);
 
   useEffect(() => {
+    if (!db || !isDbReady ) return;
+
+    const vtubersFromDb = getAllVtubers(db);
+    setVtubers(vtubersFromDb);
+
+    if (vtubersFromDb.length > 0) {
+      setRandomSelected(selectRandomVtuber(vtubersFromDb));
+    }
+  }, [db, isDbReady]);
+
+  /*useEffect(() => {
     (async () => {
       const data = await loadVtuberData();
       setVtubers(data);
@@ -24,7 +39,7 @@ const VHome: React.FC = () => {
         setRandomSelected(selectRandomVtuber(data));
       }
     })();
-  }, []);
+  }, []);*/
 
   useEffect(() => {
     if (currentlySelected && randomSelected) {

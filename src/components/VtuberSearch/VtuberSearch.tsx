@@ -46,7 +46,14 @@ const VtuberSearch: React.FC<Props> = ({
     {searchTerm.trim().length > 0 && !hasWon ? (
       <Paper className="search-results-paper" elevation={4}>
         <List>
-          {filteredVtubers.map((vt) => (
+          {filteredVtubers
+          .slice()
+          .sort((a, b) => {
+            const nameA = `${a.first_name} ${a.last_name}`.toLowerCase();
+            const nameB = `${b.first_name} ${b.last_name}`.toLowerCase();
+            return nameA.localeCompare(nameB);
+          })
+          .map((vt) => (
             <ListItem key={vt.id} disablePadding>
               <ListItemButton
                 selected={currentlySelected?.id === vt.id}

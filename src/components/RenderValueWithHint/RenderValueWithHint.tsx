@@ -1,5 +1,7 @@
 import React from "react";
-import "./RenderValueWithHint.scss"
+import up from '../../assets/hints/up.png';
+import down from '../../assets/hints/down.png';
+import "./RenderValueWithHint.scss";
 
 interface Props {
   displayValue: string | number;
@@ -19,7 +21,7 @@ const RenderValueWithHint: React.FC<Props> = ({ displayValue, compareValue, nume
     <div style={{ position: "relative", width: "100%", textAlign: "center" }}>
       {displayValue}
       <img
-        src={numericValue < compareValue ? "/assets/hints/up.png" : "/assets/hints/down.png"}
+        src={numericValue < compareValue ? up : down}
         alt={numericValue < compareValue ? "up" : "down"}
         className="hint-icon"
       />

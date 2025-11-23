@@ -17,7 +17,8 @@
     "framer-motion": "^12.23.24",
     "papaparse": "^5.5.3",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "sql.js": "^1.13.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
@@ -25,6 +26,7 @@
     "@types/papaparse": "^5.3.16",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
+    "@types/sql.js": "^1.4.9",
     "@vitejs/plugin-react": "^5.0.4",
     "eslint": "^9.36.0",
     "eslint-plugin-react-hooks": "^5.2.0",
