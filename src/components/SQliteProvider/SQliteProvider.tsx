@@ -30,7 +30,6 @@ export const SQLiteProvider: React.FC<SQLiteProviderProps> = ({ children }) => {
         if (mounted) {
           setDb(database);
           setIsDbReady(true);
-          console.log("SQLite Database initialized");
         }
       } catch (error) {
         console.error("Failed to initialize SQLite database:", error);
