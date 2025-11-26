@@ -4,7 +4,6 @@ import VtuberComparisonTable from "../../components/VtuberComparaisonTable/Vtube
 import VtuberRestartButton from "../../components/VtuberRestartButton/VtuberRestartButton";
 import VtuberSearch from "../../components/VtuberSearch/VtuberSearch";
 import type { Vtuber } from "../../models/Vtuber";
-import { loadVtuberData } from "../../utils/CsvLoaderUtils";
 import { selectRandomVtuber } from "../../utils/VtubeUtils";
 import "./VHome.scss"
 import { useSQLite } from "../../components/SQliteProvider/SQliteProvider";
@@ -31,16 +30,6 @@ const VHome: React.FC = () => {
     }
   }, [db, isDbReady]);
 
-  /*useEffect(() => {
-    (async () => {
-      const data = await loadVtuberData();
-      setVtubers(data);
-      if (data.length > 0) {
-        setRandomSelected(selectRandomVtuber(data));
-      }
-    })();
-  }, []);*/
-
   useEffect(() => {
     if (currentlySelected && randomSelected) {
       const timer = setTimeout(() => {
@@ -53,10 +42,8 @@ const VHome: React.FC = () => {
   }, [currentlySelected, randomSelected]);
 
   const handleRestart = () => {
-    const storedData = localStorage.getItem("vtubers");
-    if (storedData) {
-      const parsed: Vtuber[] = JSON.parse(storedData);
-      setRandomSelected(selectRandomVtuber(parsed));
+    if (vtubers) {
+      setRandomSelected(selectRandomVtuber(vtubers));
     }
     setCurrentlySelected(null);
     setComparisonList([]);
